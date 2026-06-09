@@ -1,0 +1,321 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --primary-color: #007bff;
+    --border-color: #dee2e6;
+    --tag-tech: #17a2b8;
+    --tag-culture: #e83e8c;
+    --tag-business: #fd7e14;
+    --text-muted: #6c757d;
+}
+
+/* Variáveis para o Modo Escuro */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f8f9fa;
+    --card-bg: #1e1e1e;
+    --border-color: #333333;
+    --text-muted: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO (NAVBAR)
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    sticky: top;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-theme {
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   3. LAYOUT PRINCIPAL (GRID)
+   ========================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* ==========================================================================
+   4. SEÇÃO DE NOTÍCIAS
+   ========================================================================== */
+.main-news {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.news-img-placeholder {
+    height: 350px;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    font-size: 1.2rem;
+}
+
+[data-theme="dark"] .news-img-placeholder {
+    background-color: #2a2a2a;
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.category {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.tag-tech { background-color: var(--tag-tech); }
+.tag-culture { background-color: var(--tag-culture); }
+.tag-business { background-color: var(--tag-business); }
+
+.news-content h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.news-content p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.news-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Notícias Secundárias */
+.secondary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-img {
+    height: 180px;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+}
+
+[data-theme="dark"] .card-img {
+    background-color: #2a2a2a;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+/* ==========================================================================
+   5. BARRA LATERAL (SIDEBAR) & NEWSLETTER
+   ========================================================================== */
+.sidebar {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.trend-list {
+    list-style: none;
+}
+
+.trend-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.trend-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.trend-text a {
+    font-weight: 600;
+}
+
+.trend-text a:hover {
+    color: var(--primary-color);
+}
+
+.trend-text p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Newsletter */
+.newsletter {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    border-radius: 6px;
+    border: 1px dashed var(--border-color);
+}
+
+.newsletter h4 { margin-bottom: 0.5rem; }
+.newsletter p { 
+    font-size: 0.85rem; 
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.newsletter input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.newsletter button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.newsletter button:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   6. RODAPÉ E RESPONSIVIDADE
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsividade para Tablets e Celulares */
+@media (max-width: 768px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    .secondary-grid {
+        grid-template-columns: 1fr;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+}
